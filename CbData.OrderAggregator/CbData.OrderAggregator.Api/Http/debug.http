@@ -1,6 +1,6 @@
 @baseUrl = http://localhost:5170
 
-### Validní objednávky → 202
+### 202
 POST {{baseUrl}}/api/orders
 Content-Type: application/json
 
@@ -9,7 +9,7 @@ Content-Type: application/json
   { "productId": "789", "quantity": 42 }
 ]
 
-### Stejný produkt znovu → po 20 s má být 456 = 8
+### 202
 POST {{baseUrl}}/api/orders
 Content-Type: application/json
 
@@ -17,7 +17,7 @@ Content-Type: application/json
   { "productId": "456", "quantity": 3 }
 ]
 
-### Nevalidní productId a quantity → 400 ValidationProblem
+### 400
 POST {{baseUrl}}/api/orders
 Content-Type: application/json
 
@@ -25,13 +25,13 @@ Content-Type: application/json
   { "productId": "abc", "quantity": 0 }
 ]
 
-### Null položka → 400
+### 400
 POST {{baseUrl}}/api/orders
 Content-Type: application/json
 
 [null]
 
-### Rozbitý JSON → 400 ProblemDetails
+### 400
 POST {{baseUrl}}/api/orders
 Content-Type: application/json
 

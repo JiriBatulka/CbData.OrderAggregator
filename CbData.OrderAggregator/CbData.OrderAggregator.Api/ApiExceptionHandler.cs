@@ -20,7 +20,7 @@ internal sealed class ApiExceptionHandler(
             {
                 Status = badRequest.StatusCode,
                 Title = "Invalid request.",
-                Detail = badRequest.Message
+                Detail = "The request body could not be read. Check that it is valid JSON in the expected format."
             },
 
             _ => new ProblemDetails
